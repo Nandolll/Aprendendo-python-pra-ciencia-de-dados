@@ -16,7 +16,7 @@ def menu():
 saldo = 2000
 LIMITE_S = 500
 numero_s = 0
-n_Limite_saque = 3
+N_LIMITE_SAQUE = 3
 extrato = ''
 usuarios=[]
 contas=[]
@@ -40,7 +40,7 @@ def sacar(saldo, extrato, numero_s):
         print("Operação Falhou, Saldo insuficiente!") 
     elif saca > LIMITE_S:
         print('Operação falhou, o valor é maior que o limite de saque permitido')
-    elif numero_s >= n_Limite_saque:
+    elif numero_s >= N_LIMITE_SAQUE:
         print('Você excedeu o seu limite de operações diárias')
     else:
         saldo -= saca
@@ -86,7 +86,7 @@ def contas_l(contas):
            Titular:\t{conta['usuario']['nome']}
            '''
         print('='*100)
-        print(l)
+        print(dedent(l))
 
 def filtrar_user(cpf,usuarios):
     user_filter= [usuario for usuario in usuarios if usuario['cpf']==cpf]
